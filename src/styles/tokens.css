@@ -1,0 +1,70 @@
+/* ==========================================================================
+   DESIGN TOKENS — terminal / brutalist portfolio
+   --------------------------------------------------------------------------
+   Accent is a phosphor green — leaning into the "hacker terminal" read on
+   purpose. Kept a shade off pure neon #00FF00 so it stays legible for
+   borders/text rather than vibrating against the near-black background.
+   Accent color is used ONLY on interactive/live elements: links, buttons,
+   the cursor, focus rings. Structural borders and dividers stay neutral.
+   Import this once, globally, before global.css.
+   ========================================================================== */
+
+:root {
+  /* ---- color -------------------------------------------------------- */
+  --color-bg: #0d0d0d;        /* near-black page background */
+  --color-panel: #161513;     /* raised surface: cards, nav, table rows */
+  --color-fg: #ece8de;        /* warm off-white body text (not pure #fff) */
+  --color-fg-dim: #86807a;    /* secondary / comment-style text */
+  --color-border: #3a362f;    /* structural borders, box-drawing rules */
+  --color-accent: #33ff66;    /* phosphor green — interactive elements only */
+  --color-accent-dim: #1a7a35;
+  --color-shadow: #000000;
+
+  /* ---- type ----------------------------------------------------------
+     Monospace throughout, no sans-serif fallback. JetBrains Mono is the
+     primary face; the stack degrades gracefully if it fails to load.  */
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', 'Space Mono', ui-monospace,
+    'Courier New', monospace;
+
+  --text-xs: 0.75rem;   /* 12px — fine print / table labels */
+  --text-sm: 0.875rem;  /* 14px — meta, tags, nav */
+  --text-base: 1rem;    /* 16px — body */
+  --text-md: 1.125rem;  /* 18px — lead lines */
+  --text-lg: 1.5rem;    /* 24px — subheadings */
+  --text-xl: 2rem;      /* 32px — section headings */
+  --text-2xl: 2.75rem;  /* 44px — large stats */
+  --text-3xl: clamp(2.25rem, 5vw + 1rem, 3.75rem); /* hero, fluid */
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.6; /* mono needs more breathing room than a serif would */
+
+  /* ---- space (4px grid) ---------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4.5rem;
+  --space-8: 6rem;
+
+  /* ---- borders & shadow ----------------------------------------------
+     Zero border-radius everywhere. Shadows are hard offsets, never blur. */
+  --radius: 0;
+  --border-thin: 2px;
+  --border-thick: 4px;
+  --shadow-offset: 4px;
+  --shadow-hard: var(--shadow-offset) var(--shadow-offset) 0 var(--color-shadow);
+  --shadow-flat: 0 0 0 var(--color-shadow); /* "pressed" state */
+
+  /* ---- layout ---------------------------------------------------------
+     Content width keeps lines under ~80 characters at base font size. */
+  --content-width: 46rem;
+  --wide-width: 64rem;
+
+  /* ---- motion -----------------------------------------------------
+     Stepped, not eased — deliberately rejects ease-out-cubic defaults. */
+  --step-fast: 100ms steps(1);
+  --type-speed: 28ms; /* per-character typewriter delay, set in JS */
+}
